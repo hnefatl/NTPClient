@@ -1,0 +1,16 @@
+<project default="compile">
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin">
+            <compilerarg line="-Xlint:all"/>
+        </javac>
+    </target>
+
+    <target name="package" depends="compile">
+        <jar basedir="bin" destfile="ntpclient.jar">
+            <manifest>
+                <attribute name="Main-Class" value="hnefatl.ntpclient.NTPClient"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
